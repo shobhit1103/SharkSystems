@@ -1,8 +1,4 @@
-/**
-* PHP Email Form Validation - v2.3
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
+
 !(function($) {
   "use strict";
 
@@ -13,13 +9,13 @@
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 
-    f.children('input').each(function() { // run all inputs
+    f.children('input').each(function() { 
      
       var i = $(this); // current input
       var rule = i.attr('data-rule');
 
       if (rule !== undefined) {
-        var ierror = false; // error flag for current input
+        var ierror = false; 
         var pos = rule.indexOf(':', 0);
         if (pos >= 0) {
           var exp = rule.substr(pos + 1, rule.length);

@@ -52,7 +52,7 @@
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#" class="get-started-btn scrollto">Gallery</a>
+      <a href="gallery.html" class="get-started-btn scrollto">Gallery</a>
 
     </div>
   </header><!-- End Header -->
@@ -757,7 +757,7 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .then(response => alert("Thanks for Contacting us! We Will Contact You Soon..."))
       .catch(error => console.error('Error!', error.message))
   })
 </script> 

@@ -87,7 +87,7 @@
 
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form method="post" role="form" class="php-email-form" autocomplete="off" name="google-sheet">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -227,6 +227,19 @@
         });
     });
 </script> 
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbycCGW-o-Lz1C4pHF8SjbqtH851-5v-WSXFKEuulFnfMf8qIxdjkvKr1whS9fov3a5B9A/exec'
+  const form = document.forms['google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script> 
+
 </body>
 
 </html>

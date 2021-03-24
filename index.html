@@ -624,7 +624,32 @@
 
           <div class="col-md-6 mt-5 mt-lg-0">
 
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5Ckp4I92wwKbH95ebLx4id3C6fSCnHRRodhCqq56PF89KZg/viewform?embedded=true" width="400" height="350" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <form   method="POST" role="form" class="php-email-form" autocomplete="off" name="index-sheet">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="Phone_no" id="Phone_no" placeholder="Your Mobile No" data-rule="minlen:10" data-msg="Please enter a valid Mobile No." />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
 
           </div>
 
@@ -724,6 +749,17 @@
             $("#myModal").modal('show');
         });
     });
+</script> 
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwY07zU9e7CkTyRmHVg59QmWjLbZkfKoRBCizm8LQtHqfOoEr6o9phQPPsCgqB6eWTq/exec'
+  const form = document.forms['index-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message))
+  })
 </script> 
 </body>
 

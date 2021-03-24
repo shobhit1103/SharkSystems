@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
 .back-to-top {
   position: fixed;
   display: none;
@@ -694,7 +695,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/New\ Waves_28571__01.png") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
